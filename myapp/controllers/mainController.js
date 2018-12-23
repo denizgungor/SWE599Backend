@@ -46,7 +46,7 @@ module.exports = {
         });
     },
     getProjectPrediction: function(req, res){
-        MainModel.predictionmodel.find({}).sort([['CreateDate', -1]])limit(1).exec( (err, data) => {
+        MainModel.predictionmodel.find({}).sort([['CreateDate', -1]]).limit(1).exec( (err, data) => {
         // Note that this error doesn't mean nothing was found,
         // it means the database had an error while searching, hence the 500 status
         if (err) return res.status(500).json(err)
